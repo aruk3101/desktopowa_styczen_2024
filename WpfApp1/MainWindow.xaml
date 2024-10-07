@@ -5,17 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Wprowadzenie danych do paszportu. Wykonał: Damian Raczek" Height="450" Width="800">
+        Title="Wprowadzenie danych do paszportu. Wykonał: Damian Raczek"
+        Height="450"
+        Width="800"
+        Background="#5F9EA0">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            
+        <StackPanel Grid.Column="0" Margin="30">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.7*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Content="Numer" Margin="5,0,5,5"/>
+                    <Label Content="Imię" Margin="5,0,5,5"/>
+                    <Label Content="Nazwisko" Margin="5,0,5,5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
+                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
+                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
+                </StackPanel>
+            </Grid>
+            <GroupBox Header="Kolor oczu">
+                <StackPanel>
+                    <RadioButton GroupName="color" Content="niebieskie" IsChecked="True"/>
+                    <RadioButton GroupName="color" Content="zielone"/>
+                    <RadioButton GroupName="color" Content="piwne"/>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
-        <StackPanel Grid.Column="1">
-
+        <StackPanel Grid.Column="1"  Margin="30">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/000-zdjecie.jpg" Height="180"></Image>
+                <Image Grid.Column="1" Source="000-odcisk.jpg" Height="180"></Image>
+            </Grid>
+            <Button Content="OK" Background="#F0FFFF"/>
         </StackPanel>
     </Grid>
 </Window>
