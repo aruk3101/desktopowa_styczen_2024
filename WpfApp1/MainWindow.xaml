@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Wprowadzenie danych do paszportu. Wykonał: Damian Raczek"
-        Height="450"
+        Height="340"
         Width="800"
         Background="#5F9EA0">
     <Grid>
@@ -14,41 +14,41 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Margin="30">
+        <StackPanel Grid.Column="0" Margin="30,30,20,30">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.3*"/>
                     <ColumnDefinition Width="0.7*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <Label Content="Numer" Margin="5,0,5,5"/>
-                    <Label Content="Imię" Margin="5,0,5,5"/>
-                    <Label Content="Nazwisko" Margin="5,0,5,5"/>
+                    <Label Content="Numer" Margin="5,0,5,0" x:Name="numerLabel"/>
+                    <Label Content="Imię" Margin="5,0,5,0"  x:Name="imieLabel"/>
+                    <Label Content="Nazwisko" Margin="5,0,5,0"  x:Name="nazwiskoLabel"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
-                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
-                    <TextBox Background="#F0FFFF" Margin="5,0,5,5"/>
+                    <TextBox x:Name="numerTextBox" Background="#F0FFFF" Margin="5,0,5,8" LostFocus="numerLabel_LostFocus"/>
+                    <TextBox x:Name="imieTextBox" Background="#F0FFFF" Margin="5,0,5,8" Text=""/>
+                    <TextBox x:Name="nazwiskoTextBox" Background="#F0FFFF" Margin="5,0,5,5" Text=""/>
                 </StackPanel>
             </Grid>
-            <GroupBox Header="Kolor oczu">
+            <GroupBox Header="Kolor oczu" Margin="0,20,0,0">
                 <StackPanel>
-                    <RadioButton GroupName="color" Content="niebieskie" IsChecked="True"/>
-                    <RadioButton GroupName="color" Content="zielone"/>
-                    <RadioButton GroupName="color" Content="piwne"/>
+                    <RadioButton x:Name="niebieskieRadioButton" GroupName="color" Content="niebieskie" IsChecked="True" Margin="15,10"/>
+                    <RadioButton x:Name="zieloneRadioButton" GroupName="color" Content="zielone" Margin="15,10"/>
+                    <RadioButton x:Name="piwneRadioButton" GroupName="color" Content="piwne" Margin="15,10"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <StackPanel Grid.Column="1"  Margin="30">
+        <StackPanel Grid.Column="1" Margin="20,30,30,30">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="/000-zdjecie.jpg" Height="180"></Image>
-                <Image Grid.Column="1" Source="000-odcisk.jpg" Height="180"></Image>
+                <Image x:Name="PictureImage" Grid.Column="0" Source="/000-zdjecie.jpg" Height="180"></Image>
+                <Image x:Name="FingerprintImage" Grid.Column="1" Source="000-odcisk.jpg" Height="180"></Image>
             </Grid>
-            <Button Content="OK" Background="#F0FFFF"/>
+            <Button x:Name="confirmButton" Content="OK" Background="#F0FFFF" Margin="50,20,50,0" Padding="10" Click="confirmButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
